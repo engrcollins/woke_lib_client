@@ -94,7 +94,7 @@ const Login= () => {
             username: response.data.username,
             password: response.data.id
         });
-        Cookies.set('name', user_login.username, { expires: 7 });
+        Cookies.set('name', response.data.username, { expires: 7 });
         setLoggedin(true);
         console.log(Cookies.get('name'));
         history.push("/");

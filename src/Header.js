@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,6 +14,7 @@ const Header = () => {
   const getUser = () => {
     if (typeof currentUser === 'string'){
       setLoggedIn(true)
+      console.log(currentUser)
     }else {
       console.log('no user')
     };
@@ -105,6 +106,10 @@ const Header = () => {
         },
     }));
 
+    useEffect(() => {
+      getUser();
+    });
+
     const setUserStatus = () => {
       Cookies.remove('name');
       console.log("Cookies removed");
@@ -115,7 +120,7 @@ const Header = () => {
 
     const classes = useStyles();
     return(
-      <div onLoad={getUser} style={{margin:"0px"}}>
+      <div style={{margin:"0px"}}>
         <AppBar className={classes.barback} position="static" padding-right="-1px" >
         <Toolbar  >
           <span className={classes.iconise} >
