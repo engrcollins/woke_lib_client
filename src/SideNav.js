@@ -70,7 +70,7 @@ const Side = () => {
           <ListItemIcon>
             <AccessTimeIcon style={{fontSize:"20px", padding:"1px"}} />
           </ListItemIcon>
-          <Link to={"/customers"}>
+          <Link to={"/"}>
             <ListItemText primary="Recent Topics" />
           </Link>
         </ListItem>

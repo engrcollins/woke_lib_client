@@ -240,14 +240,14 @@ const Registration= () => {
                           <TableCell align="left"><label className="labelling" htmlFor="birthDate">Date of Birth: </label></TableCell>
                           <TableCell align="left"><TextField
                               id="birthDate"
-                              label="Birthday"
+                              
                               type="date"
                               defaultValue="2000-01-24"
                               value={library_user.birthDate}
                               onChange={handleInputChange}
                               name="birthDate"
                               InputLabelProps={{
-                              shrink: true,
+                              shrink: false,
                               }}
                           />
                             <Typography variant="caption" display="block" className={classes.warnings} gutterBottom>
