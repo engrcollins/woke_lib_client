@@ -100,7 +100,8 @@ const Header = () => {
       },
 
       barback: {
-         backgroundColor: '#81d4fa'
+        minHeight: 100,
+         backgroundColor: '#81d4fa',
         },
     }));
 
@@ -123,7 +124,7 @@ const Header = () => {
         <TypoGraphy variant="h4" component="h6" className="web-title">WOKE LIBRARY
           </TypoGraphy>
           <span className="cub-span">
-            <img alt="web-logo" src={header2} className="cub" />
+            {/*<img alt="web-logo" src="" className="cub" />*/}
           </span>
           </Toolbar>
         </AppBar>

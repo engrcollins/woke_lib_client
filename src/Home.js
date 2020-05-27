@@ -104,6 +104,10 @@ const Home = () =>{
                 </div>
             ) : (
                 <div align="center">
+                <br/>
+                <Typography align="center" variant="h4" component="h6" >
+                  Latest Topics
+                </Typography>
                   <Card className={classes.root} variant="outlined" component="nav" >
                     {library_topics &&
                       library_topics.map((library_topic, index) => (

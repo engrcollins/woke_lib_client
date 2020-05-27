@@ -30,6 +30,7 @@ body{
 
 .web-title{
     font-family: Helvetica;
+    min-width: fit-content;
     font-weight: 800;
     font-size: 28px;
     align-items:  center;
