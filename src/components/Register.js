@@ -240,7 +240,7 @@ const Registration= () => {
                           <TableCell align="left"><label className="labelling" htmlFor="birthDate">Date of Birth: </label></TableCell>
                           <TableCell align="left"><TextField
                               id="birthDate"
-                              
+                              className="input-field"
                               type="date"
                               defaultValue="2000-01-24"
                               value={library_user.birthDate}
