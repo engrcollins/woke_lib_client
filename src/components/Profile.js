@@ -4,7 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom";
 import Cookies from "js-cookie";
 import Card from '@material-ui/core/Card';
-import collins from "../materials/collins.jpg"
+import JohnDoe from "../materials/JohnDoe.png";
+import JaneDoe from "../materials/JaneDoe.png";
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -53,6 +54,7 @@ const Profile = props => {
 
     const [profile_details, setProfile_details] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isMale, setIsMale] = useState(true);
 
     const getProfile_details = username => {
         Profile_detailsDataService.get(username)
@@ -65,6 +67,9 @@ const Profile = props => {
             response.data.birthDate = bdn;
             response.data.createdAt = crn;
             setProfile_details(response.data);
+            if(response.data.gender === "Female"){
+                setIsMale(false)
+            }
           })
           .catch(e => {
             console.log(e);
@@ -91,13 +96,23 @@ const Profile = props => {
                         <Typography gutterBottom variant="h4" component="h4">
                         Library Member Profile
                         </Typography>
+                        {isMale ? (
                             <CardMedia className={classes.image}
-                            component="img"
-                            alt="Profile Pic"
-                            height="140"
-                            image={collins}
-                            title="Collins Akinbami"
+                                component="img"
+                                alt="Profile Pic"
+                                height="140"
+                                image={JohnDoe}
+                                title={profile_details.firstName}
                             />
+                        ):(
+                            <CardMedia className={classes.image}
+                                component="img"
+                                alt="Profile Pic"
+                                height="140"
+                                image={JaneDoe}
+                                title={profile_details.firstName}
+                            />
+                        )};
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="h3">
                                 {profile_details.firstName} &nbsp; {profile_details.lastName}

@@ -136,7 +136,7 @@ const Home = () =>{
           )}
         </Grid>
         <Grid item xs={13} sm={3} lg={2} className="rightSide">
-          <h4>we we</h4>
+          <h4></h4>
         </Grid>
       </Grid>
     </div>
